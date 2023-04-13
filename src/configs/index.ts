@@ -1,0 +1,26 @@
+const ENV = import.meta.env;
+
+export const SOCKET = {
+    URL: ENV.VITE_SOCKET_URL,
+    PATH: ENV.VITE_SOCKET_PATH,
+};
+
+export const EVENT = {
+    ON: {
+        CARD: ENV.VITE_EVENT_ON_CARD,
+        ACTION: ENV.VITE_EVENT_ON_ACTION,
+        POSE: ENV.VITE_EVENT_ON_POSE,
+        RESULT: ENV.VITE_EVENT_ON_RESULT,
+    },
+    EMIT: {
+        CARD: ENV.VITE_EVENT_EMIT_CARD,
+        ACTION: ENV.VITE_EVENT_EMIT_ACTION,
+        POSE: ENV.VITE_EVENT_EMIT_POSE,
+    },
+};
+
+export const STREAMING = {
+    FPS: parseFloat(ENV.VITE_STREAMING_SECOND) * 1000 / parseFloat(ENV.VITE_STREAMING_FRAMES),
+    DELAY_POSE: parseInt(ENV.VITE_STREAMING_DELAY_POSE),
+    DELAY_ACTION: parseInt(ENV.VITE_STREAMING_DELAY_ACTION),
+}
